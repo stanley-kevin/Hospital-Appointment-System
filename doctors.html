@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doctors - Hospital Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">🏥 Hospital Management - Doctors</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container doctors-section" style="margin-top: 2rem;">
+      <h1 class="section-title">Our Doctors</h1>
+      <form id="doctor-search" class="doctor-search">
+        <div class="field">
+          <label for="dept">Department</label>
+          <select id="dept">
+            <option value="">All</option>
+            <option>Cardiology</option>
+            <option>Orthopedics</option>
+            <option>Dermatology</option>
+            <option>Neurology</option>
+            <option>Pediatrics</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="location">Location</label>
+          <input id="location" type="text" placeholder="e.g. Mumbai" list="loc-options" />
+          <datalist id="loc-options">
+            <option value="Mumbai"></option>
+            <option value="Pune"></option>
+            <option value="Delhi"></option>
+          </datalist>
+        </div>
+        <div class="actions">
+          <button class="btn primary" type="submit">Search</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+      </form>
+      <div class="doctors-grid" id="doctors-grid">
+        <div class="card doc-card" data-dept="Cardiology" data-location="Mumbai">
+          <div class="avatar sm">SS</div>
+          <div class="doc-info">
+            <div class="name">Dr. Sarah Sharma</div>
+            <div class="meta">Cardiologist • 10+ years</div>
+            <div class="meta">Available: Mon–Fri</div>
+          </div>
+          <button class="btn secondary book-btn" data-doctor="Dr. Sarah Sharma" data-specialty="Cardiology">Book</button>
+        </div>
+        <div class="card doc-card" data-dept="Orthopedics" data-location="Pune">
+          <div class="avatar sm">RK</div>
+          <div class="doc-info">
+            <div class="name">Dr. Rohan Kulkarni</div>
+            <div class="meta">Orthopedic Surgeon • 8+ years</div>
+            <div class="meta">Available: Tue, Thu, Sat</div>
+          </div>
+          <button class="btn secondary book-btn" data-doctor="Dr. Rohan Kulkarni" data-specialty="Orthopedics">Book</button>
+        </div>
+        <div class="card doc-card" data-dept="Dermatology" data-location="Delhi">
+          <div class="avatar sm">AP</div>
+          <div class="doc-info">
+            <div class="name">Dr. Aisha Patel</div>
+            <div class="meta">Dermatologist • 6+ years</div>
+            <div class="meta">Available: Mon, Wed, Fri</div>
+          </div>
+          <button class="btn secondary book-btn" data-doctor="Dr. Aisha Patel" data-specialty="Dermatology">Book</button>
+        </div>
+        <div class="card doc-card" data-dept="Neurology" data-location="Mumbai">
+          <div class="avatar sm">MS</div>
+          <div class="doc-info">
+            <div class="name">Dr. Meera Singh</div>
+            <div class="meta">Neurologist • 12+ years</div>
+            <div class="meta">Available: Mon, Wed, Fri</div>
+          </div>
+          <button class="btn secondary book-btn" data-doctor="Dr. Meera Singh" data-specialty="Neurology">Book</button>
+        </div>
+        <div class="card doc-card" data-dept="Pediatrics" data-location="Pune">
+          <div class="avatar sm">AK</div>
+          <div class="doc-info">
+            <div class="name">Dr. Amit Kumar</div>
+            <div class="meta">Pediatrician • 9+ years</div>
+            <div class="meta">Available: Mon–Fri</div>
+          </div>
+          <button class="btn secondary book-btn" data-doctor="Dr. Amit Kumar" data-specialty="Pediatrics">Book</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking Modal -->
+  <div id="booking-modal" class="modal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Book Appointment</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="booking-form" class="booking-form">
+        <div class="form-group">
+          <label for="selected-doctor">Doctor</label>
+          <input id="selected-doctor" type="text" readonly>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="appointment-date">Date</label>
+            <input id="appointment-date" type="date" required>
+          </div>
+          <div class="form-group">
+            <label for="appointment-time">Time</label>
+            <select id="appointment-time" required>
+              <option value="">Select time</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="patient-name">Patient Name</label>
+          <input id="patient-name" type="text" required placeholder="Enter patient name">
+        </div>
+        <div class="form-group">
+          <label for="patient-phone">Phone Number</label>
+          <input id="patient-phone" type="tel" required placeholder="Enter phone number">
+        </div>
+        <div class="form-group">
+          <label for="appointment-reason">Reason for Visit</label>
+          <textarea id="appointment-reason" rows="3" placeholder="Describe your symptoms"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn ghost" id="cancel-booking">Cancel</button>
+          <button type="submit" class="btn primary">Book Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="modal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content success-content">
+      <div class="success-icon">✅</div>
+      <h3>Appointment Booked Successfully!</h3>
+      <p>Your appointment has been scheduled. You will receive a confirmation email shortly.</p>
+      <button class="btn primary" id="success-ok">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

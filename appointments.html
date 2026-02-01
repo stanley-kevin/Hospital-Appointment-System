@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Appointments - Hospital Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">🏥 Hospital Management - Appointments</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container appointments-section" style="margin-top: 2rem;">
+      <h1 class="section-title">My Appointments</h1>
+      <div class="appointments-grid">
+        <div class="card appointment-card">
+          <div class="appointment-header">
+            <div class="avatar sm">SS</div>
+            <div class="appointment-info">
+              <div class="doctor">Dr. Sarah Sharma</div>
+              <div class="meta">Cardiology Consultation</div>
+            </div>
+            <span class="status-badge confirmed">Confirmed</span>
+          </div>
+          <div class="appointment-details">
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span>June 25, 2024</span>
+            </div>
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <span>10:00 AM</span>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn ghost" onclick="rescheduleAppointment(1)">Reschedule</button>
+            <button class="btn tertiary" onclick="cancelAppointment(1)">Cancel</button>
+          </div>
+        </div>
+        <div class="card appointment-card">
+          <div class="appointment-header">
+            <div class="avatar sm">RK</div>
+            <div class="appointment-info">
+              <div class="doctor">Dr. Rohan Kulkarni</div>
+              <div class="meta">Orthopedic Check-up</div>
+            </div>
+            <span class="status-badge pending">Pending</span>
+          </div>
+          <div class="appointment-details">
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span>June 28, 2024</span>
+            </div>
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <span>2:30 PM</span>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn ghost" onclick="rescheduleAppointment(2)">Reschedule</button>
+            <button class="btn tertiary" onclick="cancelAppointment(2)">Cancel</button>
+          </div>
+        </div>
+        <div class="card appointment-card">
+          <div class="appointment-header">
+            <div class="avatar sm">AP</div>
+            <div class="appointment-info">
+              <div class="doctor">Dr. Aisha Patel</div>
+              <div class="meta">Dermatology Consultation</div>
+            </div>
+            <span class="status-badge confirmed">Confirmed</span>
+          </div>
+          <div class="appointment-details">
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span>July 2, 2024</span>
+            </div>
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <span>11:30 AM</span>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn ghost" onclick="rescheduleAppointment(3)">Reschedule</button>
+            <button class="btn tertiary" onclick="cancelAppointment(3)">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel - Hospital Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">🏥 Hospital Management - Admin Panel</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container admin-section" style="margin-top: 2rem;">
+      <h1 class="section-title">Admin Dashboard</h1>
+      <div class="admin-stats">
+        <div class="stat-card">
+          <div class="stat-icon">👨⚕️</div>
+          <div class="stat-info">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Total Doctors</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-info">
+            <div class="stat-number">1,250</div>
+            <div class="stat-label">Registered Users</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-info">
+            <div class="stat-number">48</div>
+            <div class="stat-label">Today's Appointments</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-info">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Pending Approvals</div>
+          </div>
+        </div>
+      </div>
+      <div class="admin-grid">
+        <div class="card">
+          <div class="panel-head">Quick Actions</div>
+          <div class="admin-actions">
+            <button class="chip admin-btn" data-action="add-doctor">Add Doctor</button>
+            <button class="chip admin-btn" data-action="approve-appointments">Approve Appointments</button>
+            <button class="chip admin-btn" data-action="manage-departments">Manage Departments</button>
+            <button class="chip admin-btn" data-action="view-reports">View Reports</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="panel-head">Recent Activity</div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">👨⚕️</div>
+              <div class="activity-text">
+                <div>Dr. Sarah Sharma joined</div>
+                <div class="activity-time">2 hours ago</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">📅</div>
+              <div class="activity-text">
+                <div>15 new appointments booked</div>
+                <div class="activity-time">4 hours ago</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">✅</div>
+              <div class="activity-text">
+                <div>System backup completed</div>
+                <div class="activity-time">6 hours ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
